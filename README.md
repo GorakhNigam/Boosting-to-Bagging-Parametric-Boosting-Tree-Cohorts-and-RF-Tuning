@@ -27,7 +27,7 @@ What’s inside
 	  	•	Simulation framework comparing test MSE, support F1, and runtime across ρ and p.
 	  	•	Notes on sklearn API changes handled (e.g., normalize removal for LARS).
 		
-	•	Shallow Tree Cohorts with Odds Ratios (Breast Cancer)
+	• Shallow Tree Cohorts with Odds Ratios (Breast Cancer)
 	
 		•	Fit a ~6-leaf tree; compute leaf-level malignant odds and relative odds vs baseline.
 		•	Clear rules (e.g., worst radius > 16.8 & mean concavity > 0.072) define very-high-risk cohorts.
@@ -36,9 +36,9 @@ What’s inside
 		•	Top variables: worst radius/area/perimeter and (worst/mean) concave points/concavity (peaks ≈ 0.31–0.33).
 		•	Provides interpretable cutpoint candidates.
 	
-	•	k-NN Consistency (proof sketch)
+	• k-NN Consistency (proof sketch)
 		•	Shows k-NN as a local average satisfying conditions under k→∞, k/n→0.
-	•	Bagging vs Single Tree (Breast Cancer)
+	• Bagging vs Single Tree (Breast Cancer)
 		•	Single CART vs Bagging(200).
 		•	Test results (your run):
 		•	Tree: Acc 0.958, Prec 0.980, Rec 0.906, F1 0.941
@@ -46,7 +46,7 @@ What’s inside
 		•	Interpretation: bagging removes false positives (↑ precision) while recall stays similar.
 	• Majority Vote Under Independence
 		•	Derives p_B = \Pr(K \ge \lceil B/2\rceil) with K\sim \text{Bin}(B,p); explains why correlation breaks the “perfect as B→∞” argument.
-	•	RF Regression: nodesize (min_samples_leaf) Tuning
+	• RF Regression: nodesize (min_samples_leaf) Tuning
 		•	Friedman-1 simulation; sweep nodesize and select by OOB MSE vs test MSE.
 		•	In the high-signal, large-n setting: nodesize=1 wins for both; OOB closely tracks test error.
 
