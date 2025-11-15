@@ -49,3 +49,16 @@ What’s inside
 	•	RF Regression: nodesize (min_samples_leaf) Tuning
 		•	Friedman-1 simulation; sweep nodesize and select by OOB MSE vs test MSE.
 		•	In the high-signal, large-n setting: nodesize=1 wins for both; OOB closely tracks test error.
+
+**Datasets**   
+	•	Breast Cancer (Wisconsin Diagnostic) — loaded via sklearn.datasets.load_breast_cancer().   
+	•	Telco Customer Churn — loaded via sklearn.datasets.fetch_openml(name="Telco-Customer-Churn") (or by data id 42178).    
+	•	All other experiments use synthetic data generators included in /src.  
+
+**Key findings**   
+	•	Parametric logistic boosting rivals GLM on log-loss and provides coordinate-wise interpretability.    
+	•	Churn: baseline results are conservative (good precision, modest recall); threshold tuning or class-weights recommended.   
+	•	L2Boost: smaller ν ≈ forward-stagewise; more stable with correlated features.   
+	•	Gini scans: reliably pinpoint size and shape-irregularity features with clear thresholds.    
+	•	Bagging: reduces variance; here it eliminated false positives (precision 1.0) with similar recall.    
+	•	RF nodesize: in high-signal regimes, deep leaves (nodesize=1–2) are optimal; OOB ≈ test for selection.    
